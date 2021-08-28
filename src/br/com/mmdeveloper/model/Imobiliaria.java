@@ -36,7 +36,7 @@ public class Imobiliaria {
        return this.getTodosOsApartamentos().stream().filter(Apartamento::getApartamentoNãoAlugado).count();
     }
 
-    public double getApartamentoNaoAlugadoDeMenorValor() throws NoSuchElementException{
+    public double getApartamentoNaoAlugadoDeMenorValor() {
         Stream<Apartamento> apartamentoStream  = this.apartamentos.stream().filter(Apartamento::getApartamentoNãoAlugado);
         if(apartamentoStream.count() < 1){
             throw new ApartamentoIndisponivelException("No momento não temos apartamentos disponíveis");
